@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Desenvolvedor de Software</title>
+    <!-- Adicionar Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Importar fonte JetBrains Mono diretamente no HTML, pois @import no CSS pode ter problemas de performance ou bloqueio -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>emailjs.init("USER_ID");</script>
+</head>
+
+<body>
+    <!-- Navegação -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">DevPortfolio</a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Build <span class="tag">
+                    << /span><span class="highlight">seu código</span><span class="tag">></span></h1>
+            <p>Olá! Sou um desenvolvedor em transição de carreira, focado em Java e Python. Desenvolvendo soluções
+                back-end, front-end e análise de dados para os desafios mais complexos.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                <a href="#contact" class="btn btn-outline">Entre em Contato</a>
+            </div>
+
+            <div class="hero-social-links">
+                <a href="https://www.linkedin.com/in/SEU_USUARIO_LINKEDIN" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/SEU_USUARIO_GITHUB" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:SEU_EMAIL@exemplo.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/SEU_NUMERO_WHATSAPP" target="_blank" rel="noopener noreferrer"
+                    aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="floating-numbers"></div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/400x400/0c0c11/ecf0f3?text=Sua+Foto"
+                        alt="Foto do Desenvolvedor">
+                </div>
+                <div class="about-text">
+                    <h3>Desenvolvedor Back-End & Full-Stack</h3>
+                    <p>Sou um profissional de 27 anos em transição de carreira, formado em Análise e Desenvolvimento de
+                        Sistemas pela Uninter. Estou focado em me tornar um desenvolvedor de software completo, com
+                        habilidades versáteis que me permitam atuar em diferentes áreas da tecnologia.</p>
+                    <p>Tenho afinidade com Java e Python, buscando aprofundar meus conhecimentos e aplicá-los em
+                        projetos desafiadores. Estou aberto a aprender novas tecnologias e frameworks conforme as
+                        necessidades dos projetos. Busco experiências em desenvolvimento back-end, front-end, full-stack
+                        e análise de dados.</p>
+                    <p>Atualmente estou construindo meu portfólio com projetos práticos para demonstrar minhas
+                        habilidades e conhecimentos técnicos.</p>
+                    <div class="skills">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Análise de Dados</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>Meus Projetos</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="back-end">Back-End</button>
+                <button class="filter-btn" data-filter="front-end">Front-End</button>
+                <button class="filter-btn" data-filter="full-stack">Full-Stack</button>
+                <button class="filter-btn" data-filter="data">Análise de Dados</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-category="back-end">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x200/0c0c11/0BF296?text=API+REST+Java"
+                            alt="API REST com Java">
+                        <div class="project-category">Back-End</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>API REST Gerenciadora</h3>
+                        <p>API robusta com Spring Boot para gerenciar entidades, com segurança JWT e testes unitários.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Ver Demo</a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> Código Fonte</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="front-end">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x200/0c0c11/00CCFF?text=Dashboard+React"
+                            alt="Dashboard com React">
+                        <div class="project-category">Front-End</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Dashboard Interativo</h3>
+                        <p>Interface de dashboard desenvolvida com React, utilizando gráficos para visualização de
+                            dados.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Ver Demo</a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> Código Fonte</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="full-stack">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x200/0c0c11/FFFFFF?text=E-commerce+Python"
+                            alt="E-commerce com Python/Django">
+                        <div class="project-category">Full-Stack</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Plataforma E-commerce</h3>
+                        <p>Sistema de e-commerce com Django (Back) e HTML/CSS/JS (Front), incluindo carrinho e checkout.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Ver Demo</a>
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> Código Fonte</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="data">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x200/0c0c11/F1FA8C?text=Análise+Vendas+Py"
+                            alt="Análise de Vendas com Python">
+                        <div class="project-category">Análise de Dados</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Análise de Vendas</h3>
+                        <p>Notebook Jupyter com análise exploratória de dados de vendas usando Pandas, Matplotlib e
+                            Seaborn.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fab fa-github"></i> Código Fonte</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <p>Sinta-se à vontade para entrar em contato ou conectar-se pelas redes sociais. Estou aberto a
+                        novas oportunidades e colaborações!</p>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <span>Email</span>
+                            <a href="mailto:SEU_EMAIL@exemplo.com">SEU_EMAIL@exemplo.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="contact-details">
+                            <span>WhatsApp</span>
+                            <a href="https://wa.me/SEU_NUMERO_WHATSAPP" target="_blank" rel="noopener noreferrer">(XX)
+                                XXXXX-XXXX</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-details">
+                            <span>Localização</span>
+                            <span>Sua Cidade, Seu Estado, Brasil</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/SEU_USUARIO_LINKEDIN" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/SEU_USUARIO_GITHUB" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Envie uma Mensagem</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <input type="text" id="subject" name="subject" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="#home" class="logo">DevPortfolio</a>
+                    <p>Desenvolvedor de Software apaixonado por criar soluções eficientes e inovadoras. Sempre
+                        aprendendo e buscando novos desafios.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#projects">Projetos</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Conecte-se</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/SEU_USUARIO_LINKEDIN" target="_blank"
+                                rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://github.com/SEU_USUARIO_GITHUB" target="_blank"
+                                rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="mailto:SEU_EMAIL@exemplo.com">Email</a></li>
+                        <li><a href="https://wa.me/SEU_NUMERO_WHATSAPP" target="_blank"
+                                rel="noopener noreferrer">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © <span id="currentYear"></span> Seu Nome. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link para o arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+
+</html>
