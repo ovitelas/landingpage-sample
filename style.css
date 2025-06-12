@@ -27,7 +27,7 @@ body {
     color: var(--light);
     line-height: 1.6;
 }
-
+   
 /* Container e Layout */
 .container {
     max-width: 1200px;
