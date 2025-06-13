@@ -53,7 +53,7 @@ cd portfolio-pessoal
 
 📸 Prévia do Projeto
 
-<p align="center"> <img src="assets/homepage.png" alt="Homepage" width="600"> </p>
+<p align="center"> <img src="assets/home.png" alt="Homepage" width="600"> </p>
 <p align="center"> <img src="assets/about.png" alt="Sobre" width="600"> </p>
 <p align="center"> <img src="assets/projects.png" alt="Projetos" width="600"> </p>
 <p align="center"> <img src="assets/form.png" alt="Formulario Mensagem" width="600"> </p>
