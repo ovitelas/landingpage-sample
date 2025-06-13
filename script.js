@@ -1,74 +1,103 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Debounce para eventos de scroll/resize
+    function debounce(func, wait = 100) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
 
-    // Script Navbar Shrink on Scroll
+    // Navbar Shrink on Scroll
     const navbar = document.getElementById('navbar');
     if (navbar) {
-        window.onscroll = function () {
+        window.onscroll = debounce(function() {
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-        };
+        });
     }
 
-    // Script Menu Mobile (Burger)
+    // Menu Mobile (Burger)
     const burger = document.querySelector('.burger');
     const navMenu = document.querySelector('.nav-menu');
 
     if (burger && navMenu) {
         burger.addEventListener('click', () => {
+            const isActive = !burger.classList.contains('active');
             burger.classList.toggle('active');
             navMenu.classList.toggle('active');
-            // Travar/Destravar scroll do body quando menu está ativo
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            burger.setAttribute('aria-expanded', isActive);
+            document.body.style.overflow = isActive ? 'hidden' : '';
         });
 
         // Fechar menu ao clicar em um link
         const navLinks = document.querySelectorAll('.nav-menu a');
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
                 if (navMenu.classList.contains('active')) {
                     burger.classList.remove('active');
                     navMenu.classList.remove('active');
-                    document.body.style.overflow = ''; // Restaurar scroll
+                    burger.setAttribute('aria-expanded', false);
+                    document.body.style.overflow = '';
+                }
+                
+                // Scroll suave
+                const targetId = link.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
         });
     }
 
-    // Script Animação Números Binários (Hero)
+    // Animação Números Binários (Hero)
     const floatingNumbersContainer = document.querySelector('.floating-numbers');
     if (floatingNumbersContainer) {
-        const numberOfDigits = 50; // Ajuste a quantidade
+        const numberOfDigits = 50;
+        let animationActive = true;
 
         function createBinaryDigit() {
-            if (!floatingNumbersContainer) return; // Checagem extra
             const digit = document.createElement('span');
             digit.classList.add('binary-digit');
             digit.textContent = Math.random() > 0.5 ? '1' : '0';
             digit.style.left = `${Math.random() * 100}%`;
-
-            const duration = Math.random() * 10 + 10; // entre 10s e 20s
+            
+            const duration = Math.random() * 10 + 10;
             const delay = Math.random() * 5;
             digit.style.animationDuration = `${duration}s`;
             digit.style.animationDelay = `-${delay}s`;
-
+            
             floatingNumbersContainer.appendChild(digit);
-
+            
             setTimeout(() => {
-                digit.remove();
-            }, (duration + delay + 1) * 1000); // Adiciona 1s de margem
+                if (digit.parentNode) {
+                    digit.remove();
+                }
+            }, (duration + delay + 1) * 1000);
         }
 
+        // Inicializar dígitos
         for (let i = 0; i < numberOfDigits; i++) {
             createBinaryDigit();
         }
-        // Opcional: Criar novos dígitos continuamente (cuidado com performance)
-        // setInterval(createBinaryDigit, 1500); // Cria um novo a cada 1.5s
+        
+        // Otimizar performance
+        document.addEventListener('visibilitychange', () => {
+            animationActive = !document.hidden;
+        });
     }
 
-    // Script Filtro de Projetos
+    // Filtro de Projetos
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -77,13 +106,13 @@ document.addEventListener('DOMContentLoaded', function () {
             button.addEventListener('click', () => {
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-
+                
                 const filter = button.getAttribute('data-filter');
-
+                
                 projectCards.forEach(card => {
                     const category = card.getAttribute('data-category');
                     if (filter === 'all' || filter === category) {
-                        card.style.display = 'flex'; // Usar flex para manter alinhamento interno
+                        card.style.display = 'flex';
                     } else {
                         card.style.display = 'none';
                     }
@@ -92,62 +121,113 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Script para atualizar ano no Copyright
+    // Atualizar ano no Copyright
     const currentYearSpan = document.getElementById('currentYear');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
 
-    // Active link highlighting for navbar (opcional, mas bom para UX)
+    // Destaque de link ativo
     const sections = document.querySelectorAll('section[id]');
     const navLi = document.querySelectorAll('nav .nav-menu li a');
 
     if (sections.length > 0 && navLi.length > 0) {
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', debounce(() => {
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                // Ajustar o offset para ativar o link um pouco antes de chegar no topo da seção
-                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
                     current = section.getAttribute('id');
                 }
             });
-
+            
             navLi.forEach(a => {
                 a.classList.remove('active-link');
                 if (a.getAttribute('href').includes(current)) {
                     a.classList.add('active-link');
                 }
             });
-            // Caso especial para o topo da página (home)
-            if (pageYOffset < sections[0].offsetTop - sections[0].clientHeight / 3) {
+            
+            if (window.scrollY < sections[0].offsetTop - sections[0].clientHeight / 3) {
                 navLi.forEach(a => a.classList.remove('active-link'));
                 const homeLink = document.querySelector('nav .nav-menu a[href="#home"]');
                 if (homeLink) homeLink.classList.add('active-link');
             }
-        });
-        // Definir o link Home como ativo inicialmente
+        }));
+        
         const homeLink = document.querySelector('nav .nav-menu a[href="#home"]');
         if (homeLink) homeLink.classList.add('active-link');
     }
 
-    // Configuração do EmailJS
+    // EmailJS com validação
     const contactForm = document.getElementById("contact-form");
+    
+    // Sanitização de inputs
+    function sanitizeInput(input) {
+        const div = document.createElement('div');
+        div.textContent = input;
+        return div.innerHTML;
+    }
 
     if (contactForm) {
         contactForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Evita o recarregamento da página
-
-            // Envia o formulário usando EmailJS
+            e.preventDefault();
+            
+            // Validação de email
+            const email = document.getElementById('email').value;
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert("Por favor, insira um email válido.");
+                return;
+            }
+            
+            // Sanitizar inputs
+            const name = sanitizeInput(document.getElementById('name').value);
+            const message = sanitizeInput(document.getElementById('message').value);
+            const subject = sanitizeInput(document.getElementById('subject').value);
+            
+            // Feedback visual
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = "Enviando...";
+            submitButton.disabled = true;
+            
+            // Enviar formulário
             emailjs.sendForm("SERVICE_id", "ID_TEMPLATE", this)
                 .then(() => {
-                    alert("Mensagem enviada com sucesso!"); // Feedback ao usuário
-                    contactForm.reset(); // Limpa o formulário
+                    alert("Mensagem enviada com sucesso!");
+                    contactForm.reset();
                 }, (error) => {
-                    alert("Erro ao enviar: " + error.text); // Mensagem de erro
+                    alert("Erro ao enviar: " + error.text);
+                })
+                .finally(() => {
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
                 });
         });
     }
-
+    
+    // Prefetch de imagens
+    if (window.innerWidth > 768) {
+        const links = ['#about', '#projects', '#contact'];
+        links.forEach(link => {
+            const section = document.querySelector(link);
+            if (section) {
+                const img = section.querySelector('img');
+                if (img) {
+                    const link = document.createElement('link');
+                    link.rel = 'prefetch';
+                    link.href = img.src;
+                    document.head.appendChild(link);
+                }
+            }
+        });
+    }
+    
+    // Remover skeleton após carregamento
+    window.addEventListener('load', () => {
+        document.querySelectorAll('.project-image').forEach(img => {
+            img.classList.remove('loading');
+        });
+    });
 });
