@@ -38,7 +38,7 @@ Uma página web responsiva para destacar meus projetos de desenvolvimento, minha
 
 1. Clone o repositório:
 
-```bash
+
 git clone https://github.com/SEU_USUARIO_GITHUB/portfolio-pessoal.git
 
     Acesse o diretório do projeto:
@@ -69,14 +69,15 @@ portfolio-pessoal/
 ✍️ Autor
 
 Victor Hugo B. Soares
-📧 contatovictorhugosoares@gmail.com
-🌐 LinkedIn
-📞 WhatsApp
+📧 [E-mail - contatovictorhugosoares@gmail.com](contatovictorhugosoares@gmail.com)
+🌐 [LinkedIn](https://linkedin.com/in/ovitelas)
+📞 [Telefone(WhatsApp) +55 11 964628356](https://wa.me/+5511964628356)
 
-🇺🇸 Portfolio Website (EN)
+## 🇺🇸 Portfolio Website (EN)
 
 A responsive personal portfolio website to showcase my skills, tech stack, and recent development projects.
-🔧 Built with:
+
+## 🔧 Built with:
 
     Semantic HTML5
 
@@ -90,7 +91,7 @@ A responsive personal portfolio website to showcase my skills, tech stack, and r
 
     EmailJS (for contact form)
 
-💡 Features
+## 💡 Features
 
     About section with bio and skills
 
@@ -102,6 +103,13 @@ A responsive personal portfolio website to showcase my skills, tech stack, and r
 
     Clean code, animations and accessibility
 
-🌍 Live Preview
+## 🌍 Live Preview
 
-🔗 https://SEU_USUARIO_GITHUB.github.io/portfolio-pessoal/
+🔗 https://SEU_USUARIO_GITHUB.github.io/portfolio-pessoal/  
+
+## ✍️ Author 
+
+Victor Hugo B. Soares
+📧 [E-mail - contatovictorhugosoares@gmail.com](contatovictorhugosoares@gmail.com)
+🌐 [LinkedIn](https://linkedin.com/in/ovitelas)
+📞 [Telefone(WhatsApp) +55 11 964628356](https://wa.me/+5511964628356)
