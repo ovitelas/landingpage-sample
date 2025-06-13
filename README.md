@@ -50,7 +50,7 @@ cd portfolio-pessoal
     O projeto é 100% front-end e não requer backend ou dependências adicionais para funcionar.
 
 📸 Prévia do Projeto
-<p align="center"> <img src="https://via.placeholder.com/800x450/0c0c11/0BF296?text=Portfolio+Pessoal" alt="Capa do Projeto Portfolio Pessoal" width="600"> </p>
+<p align="center"> <img src="assets/HomePage.png" alt="Capa do Projeto Portfolio Pessoal" width="600"> </p>
 🌐 Publicação
 
 Você pode visualizar o projeto online clicando no link abaixo:
@@ -64,7 +64,7 @@ portfolio-pessoal/
 └── README.md
 
 🧾 Histórico de Commits
-<p align="center"> <img src="https://via.placeholder.com/800x300/121621/ecf0f3?text=git+log+--oneline" alt="Git Log" width="700"> </p>
+<p align="center"> <img src="assets/gitlog.png" alt="Git Log" width="700"> </p>
 
 ---
 
