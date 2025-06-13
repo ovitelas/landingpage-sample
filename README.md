@@ -39,7 +39,7 @@ Uma página web responsiva para destacar meus projetos de desenvolvimento, minha
 1. Clone o repositório:
 
 
-git clone https://github.com/SEU_USUARIO_GITHUB/portfolio-pessoal.git
+git clone https://github.com/ovitelas/portfolio-pessoal.git
 
     Acesse o diretório do projeto:
 
@@ -54,7 +54,7 @@ cd portfolio-pessoal
 🌐 Publicação
 
 Você pode visualizar o projeto online clicando no link abaixo:
-🔗 https://SEU_USUARIO_GITHUB.github.io/portfolio-pessoal/
+🔗 https://ovitelas.github.io/portfolio-pessoal/
 📁 Estrutura do projeto
 
 portfolio-pessoal/
@@ -66,6 +66,8 @@ portfolio-pessoal/
 🧾 Histórico de Commits
 <p align="center"> <img src="https://via.placeholder.com/800x300/121621/ecf0f3?text=git+log+--oneline" alt="Git Log" width="700"> </p>
 
+---
+
 ✍️ Autor
 
 Victor Hugo B. Soares
@@ -73,9 +75,15 @@ Victor Hugo B. Soares
 🌐 [LinkedIn](https://linkedin.com/in/ovitelas)
 📞 [Telefone(WhatsApp) +55 11 964628356](https://wa.me/+5511964628356)
 
+
+---
+
+
 ## 🇺🇸 Portfolio Website (EN)
 
 A responsive personal portfolio website to showcase my skills, tech stack, and recent development projects.
+
+---
 
 ## 🔧 Built with:
 
@@ -91,6 +99,8 @@ A responsive personal portfolio website to showcase my skills, tech stack, and r
 
     EmailJS (for contact form)
 
+---
+
 ## 💡 Features
 
     About section with bio and skills
@@ -103,9 +113,13 @@ A responsive personal portfolio website to showcase my skills, tech stack, and r
 
     Clean code, animations and accessibility
 
+---
+
 ## 🌍 Live Preview
 
-🔗 https://SEU_USUARIO_GITHUB.github.io/portfolio-pessoal/  
+🔗 https://ovitelas.github.io/portfolio-pessoal/  
+
+---
 
 ## ✍️ Author 
 
