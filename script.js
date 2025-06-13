@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
             
-            // Sanitizar inputs
+            // "Sanitizar" inputs
             const name = sanitizeInput(document.getElementById('name').value);
             const message = sanitizeInput(document.getElementById('message').value);
             const subject = sanitizeInput(document.getElementById('subject').value);

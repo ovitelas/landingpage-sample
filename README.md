@@ -39,7 +39,7 @@ Uma página web responsiva para destacar meus projetos de desenvolvimento, minha
 1. Clone o repositório:
 
 
-git clone https://github.com/ovitelas/portfolio-pessoal.git
+git clone https://github.com/ovitelas/landingpage-sample.git
 
     Acesse o diretório do projeto:
 
@@ -49,12 +49,21 @@ cd portfolio-pessoal
 
     O projeto é 100% front-end e não requer backend ou dependências adicionais para funcionar.
 
+---
+
 📸 Prévia do Projeto
-<p align="center"> <img src="assets/HomePage.png" alt="Capa do Projeto Portfolio Pessoal" width="600"> </p>
-🌐 Publicação
+
+<p align="center"> <img src="assets/homepage.png" alt="Homepage" width="600"> </p>
+<p align="center"> <img src="assets/about.png" alt="Sobre" width="600"> </p>
+<p align="center"> <img src="assets/projects.png" alt="Projetos" width="600"> </p>
+<p align="center"> <img src="assets/form.png" alt="Formulario Mensagem" width="600"> </p>
+
+---
+
+## 🌐 Publicação
 
 Você pode visualizar o projeto online clicando no link abaixo:
-🔗 https://ovitelas.github.io/portfolio-pessoal/
+🔗 https://github.com/ovitelas/landingpage-sample/
 📁 Estrutura do projeto
 
 portfolio-pessoal/
@@ -63,8 +72,6 @@ portfolio-pessoal/
 ├── script.js
 └── README.md
 
-🧾 Histórico de Commits
-<p align="center"> <img src="assets/gitlog.png" alt="Git Log" width="700"> </p>
 
 ---
 
@@ -117,7 +124,7 @@ A responsive personal portfolio website to showcase my skills, tech stack, and r
 
 ## 🌍 Live Preview
 
-🔗 https://ovitelas.github.io/portfolio-pessoal/  
+🔗 https://github.com/ovitelas/landingpage-sample/ 
 
 ---
 

@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Build artifacts
+dist/
+build/
+
+# IDEs
+.idea/
+*.iml
+*.iws
+.project
+.classpath
+
+# Logs
+*.log

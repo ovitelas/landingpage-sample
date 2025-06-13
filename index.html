@@ -5,22 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Desenvolvedor de Software</title>
-    <!-- Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
-               script-src 'self' https://cdn.jsdelivr.net; 
-               style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline'; 
-               font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; 
+    <!-- CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+               script-src 'self' https://cdn.jsdelivr.net;
+               style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline';
+               font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
                img-src 'self' data: https://via.placeholder.com;">
 
-    <!-- Critical CSS -->
+    <!--  CSS -  -->
     <style>
         nav,
         .hero-content {
             opacity: 0;
         }
 
+        nav {
+            animation: fadeIn 0.6s ease-out 0.2s forwards; /* Duração e delay podem ser ajustados */
+        }
+
         .hero-content {
-            animation: fadeIn 1s ease-out forwards;
+            animation: fadeIn 1s ease-out 0.5s forwards; /* Delay pode ser ajustado para após a nav */
         }
 
         @keyframes fadeIn {
@@ -49,7 +53,17 @@
     <script async src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            emailjs.init("USER_ID");
+            // Lembre-se de substituir "USER_ID" pelo seu User ID real do EmailJS
+            // emailjs.init("USER_ID");
+            // Se você não for usar EmailJS imediatamente ou o USER_ID não estiver configurado,
+            // é melhor comentar a linha acima para evitar erros no console.
+            // Exemplo:
+            // if (typeof emailjs !== 'undefined') {
+            //     emailjs.init("YOUR_USER_ID");
+            // } else {
+            //     console.warn("EmailJS SDK não carregado.");
+            // }
+            console.log("EmailJS init placeholder. Substitua USER_ID.");
         });
     </script>
 </head>
@@ -77,9 +91,8 @@
     <section class="hero" id="home">
         <div class="container hero-content">
             <h1>Build <span class="tag">
-                    << /span><span class="highlight">seu código</span><span class="tag">></span></h1>
-            <p>Olá! Sou um desenvolvedor em transição de carreira, focado em Java e Python. Desenvolvendo soluções
-                back-end, front-end e análise de dados para os desafios mais complexos.</p>
+                    << /span><span class="highlight">Código</span><span class="tag">></span></h1>
+            <p>Olá! Mundo.</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">Ver Projetos</a>
                 <a href="#contact" class="btn btn-outline">Entre em Contato</a>
@@ -116,30 +129,29 @@
                         alt="Foto do Desenvolvedor" loading="lazy">
                 </div>
                 <div class="about-text">
-                    <h3>Desenvolvedor Back-End & Full-Stack</h3>
-                    <p>Sou um profissional de XX anos em transição de carreira, formado em Análise e Desenvolvimento de
-                        Sistemas pela Uninter. Estou focado em me tornar um desenvolvedor de software completo, com
+                    <h3>Desenvolvedor</h3>
+                    <p>Sou um XXXXX de XX anos em XXXXXX XXXXXX, formado em XXXXXXX XXXXX XXXXX XXX. Estou focado em me tornar um desenvolvedor de software completo, com
                         habilidades versáteis que me permitam atuar em diferentes áreas da tecnologia.</p>
-                    <p>Tenho afinidade com Java e Python, buscando aprofundar meus conhecimentos e aplicá-los em
+                    <p>Tenho afinidade com Linguagem1 e Linguagem2, buscando aprofundar meus conhecimentos e aplicá-los em
                         projetos desafiadores. Estou aberto a aprender novas tecnologias e frameworks conforme as
-                        necessidades dos projetos. Busco experiências em desenvolvimento back-end, front-end, full-stack
-                        e análise de dados.</p>
+                        necessidades dos projetos. Busco experiências em XXXXXXX, XXXXXXXX, XXXXXXXXXXX
+                        e XXXXXXXXXXXXXXXXX.</p>
                     <p>Atualmente estou construindo meu portfólio com projetos práticos para demonstrar minhas
                         habilidades e conhecimentos técnicos.</p>
                     <div class="skills">
                         <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Spring Boot</span>
                         <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Django</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">C#</span>
                         <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Análise de Dados</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Cobol</span>
+                        <span class="skill-tag">XXXX</span>
+                        <span class="skill-tag">XXXXXXX</span>
+                        <span class="skill-tag">XXXXX</span>
+                        <span class="skill-tag">XXX</span>
+                        <span class="skill-tag">XXXXXXX</span>
+                        <span class="skill-tag">XXXXX XXXX</span>
                     </div>
                 </div>
             </div>
@@ -154,20 +166,57 @@
                 <button class="filter-btn active" data-filter="all">Todos</button>
                 <button class="filter-btn" data-filter="back-end">Back-End</button>
                 <button class="filter-btn" data-filter="front-end">Front-End</button>
-                <button class="filter-btn" data-filter="full-stack">Full-Stack</button>
-                <button class="filter-btn" data-filter="data">Análise de Dados</button>
+                <button class="filter-btn" data-filter="full-stack">XXXX-XXXXX</button>
+                <button class="filter-btn" data-filter="data">XXXXXXX XX XXXXX</button>
             </div>
 
             <div class="projects-grid">
                 <div class="project-card" data-category="back-end">
                     <div class="project-image loading">
                         <img src="https://via.placeholder.com/400x200/0c0c11/0BF296?text=API+REST+Java&format=webp"
-                            alt="API REST com Java" loading="lazy">
+                            alt="API REST" loading="lazy">
                         <div class="project-category">Back-End</div>
                     </div>
                     <div class="project-info">
-                        <h3>API REST Gerenciadora</h3>
-                        <p>API robusta com Spring Boot para gerenciar entidades, com segurança JWT e testes unitários.
+                        <h3>API REST XXXXX</h3>
+                        <p>API REST APICANDO CONCEITOS XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Ver
+                                Demo</a>
+                            <a href="#" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código Fonte</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projetos card -->
+                <div class="project-card" data-category="back-end">
+                    <div class="project-image loading">
+                        <img src="https://via.placeholder.com/400x200/0c0c11/0BF296?text=Sistema+Bar+Restaurante&format=webp"
+                            alt="Sistema XXXX" loading="lazy">
+                        <div class="project-category">Back-End</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Sistema XXXX</h3>
+                        <p>XXXXXXXX, XXXXX, XXXXXXXX.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Ver
+                                Demo</a>
+                            <a href="#" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código Fonte</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="front-end">
+                    <div class="project-image loading">
+                        <img src="https://via.placeholder.com/400x200/0c0c11/0BF296?text=Sistema+Bar+Restaurante&format=webp"
+                            alt=" XXXXXXXXXXXXX" loading="lazy">
+                        <div class="project-category">Front-End</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>XXXX XXXXX XXXXX XXX</h3>
+                        <p>XX XXXXX XXXXXXX XXXX XXXXXX XXXXX XXXX.
                         </p>
                         <div class="project-links">
                             <a href="#" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Ver
@@ -189,8 +238,7 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Informações de Contato</h3>
-                    <p>Sinta-se à vontade para entrar em contato ou conectar-se pelas redes sociais. Estou aberto a
-                        novas oportunidades e colaborações!</p>
+                    <p>XXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXX XXXXXXXXX XXXXXXXXXXXXX XXXXXXXXXXX XXXXXXXXX</p>
 
                     <div class="contact-item">
                         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
@@ -213,7 +261,7 @@
                         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="contact-details">
                             <span>Localização</span>
-                            <span>Sua Cidade, Seu Estado, Brasil</span>
+                            <span>XXX XXXXX, XX, XXXXX</span>
                         </div>
                     </div>
 
@@ -261,8 +309,8 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <a href="#home" class="logo">DevPortfolio</a>
-                    <p>Desenvolvedor de Software apaixonado por criar soluções eficientes e inovadoras. Sempre
-                        aprendendo e buscando novos desafios.</p>
+                    <p>XXXXXXXXXXX XXXXXXXXXX XXXXXXXXXXXXX XXXXXXX XX XX XX XXXXXX. XXXXXX XXXXXX XXXXXX XXXXXXX
+                        XXXXXXX.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Links Rápidos</h4>
