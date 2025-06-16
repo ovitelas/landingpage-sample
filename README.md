@@ -63,7 +63,7 @@ cd portfolio-pessoal
 ## 🌐 Publicação
 
 Você pode visualizar o projeto online clicando no link abaixo:
-🔗 https://github.com/ovitelas/landingpage-sample/
+🔗 https://ovitelas.github.io/landingpage-sample/
 📁 Estrutura do projeto
 
 portfolio-pessoal/
@@ -124,7 +124,7 @@ A responsive personal portfolio website to showcase my skills, tech stack, and r
 
 ## 🌍 Live Preview
 
-🔗 https://github.com/ovitelas/landingpage-sample/ 
+🔗 https://ovitelas.github.io/landingpage-sample/
 
 ---
 
