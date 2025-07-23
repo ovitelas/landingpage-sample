@@ -564,11 +564,13 @@ nav.scrolled .nav-container {
 
 .contact-info, .contact-form {
     background-color: var(--gray-darker);
-    padding: 30px;
+    padding: 22px;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.05);
     position: relative; 
+    max-width: 420px;
+    margin: 0 auto;
 }
 
 .contact-info h3, .contact-form h3 {
@@ -875,6 +877,11 @@ footer {
         gap: 30px;
         text-align: center;
     }
+    
+    .contact-info, .contact-form {
+        max-width: 100%;
+        padding: 18px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -898,7 +905,8 @@ footer {
 
 @media (max-width: 576px) {
     .container {
-        padding: 0 15px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     
     section {
@@ -924,5 +932,16 @@ footer {
     .filter-btn {
         font-size: 0.8rem;
         padding: 6px 15px;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    .contact-info, .contact-form {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: none;
+        width: 100%;
+        padding: 6px;
     }
 }
